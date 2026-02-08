@@ -6,6 +6,7 @@ import { storage } from '../../firebase';
 import { downloadMarkdownAsPdf, EmptyMarkdownError } from '../../utils/pdf';
 import NotesSidebar, { type Note } from './NotesSidebar.tsx';
 import { getDocuments, fileUpload, createDocument, updateDocument, deleteDocument } from '../../api/auth';
+import logo from '../../assets/logo.png';
 
 interface MainPageProps {
     onLoginRequest: () => void;
@@ -267,7 +268,7 @@ const MainPage = ({ onLoginRequest }: MainPageProps) => {
                         </button>
 
                         <img
-                            src="src/assets/logo.png"
+                            src={logo}
                             alt="VibeScribe Logo"
                             className="h-16 w-auto"
                         />
