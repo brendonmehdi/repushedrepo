@@ -34,7 +34,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec tsx src/index.ts",
-    "start": "tsx src/index.ts"
+    "start": "tsx src/index.ts",
+    "postinstall": "prisma generate"
   },
   "keywords": [],
   "author": "",
