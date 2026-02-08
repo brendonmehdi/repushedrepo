@@ -5,9 +5,21 @@ import { fileURLToPath } from 'url';
 import type { Request, Response, NextFunction } from 'express';
 
 // Read the ServiceAccount (ESM-compatible path resolution)
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const serviceAccountPath = resolve(__dirname, '../config/serviceAccount.json');
-const serviceAccount = JSON.parse(readFileSync(serviceAccountPath, 'utf8'));
+// Read the ServiceAccount (ESM-compatible path resolution)
+let serviceAccount;
+
+if (process.env.FIREBASE_SERVICE_ACCOUNT) {
+    try {
+        serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+    } catch (error) {
+        console.error('Failed to parse FIREBASE_SERVICE_ACCOUNT environment variable');
+        throw error;
+    }
+} else {
+    const __dirname = dirname(fileURLToPath(import.meta.url));
+    const serviceAccountPath = resolve(__dirname, '../config/serviceAccount.json');
+    serviceAccount = JSON.parse(readFileSync(serviceAccountPath, 'utf8'));
+}
 
 if (!admin.apps.length) {
     admin.initializeApp({
