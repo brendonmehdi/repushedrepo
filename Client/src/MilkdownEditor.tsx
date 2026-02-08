@@ -110,8 +110,8 @@ export const MilkdownEditor: React.FC<MilkdownEditorProps> = ({ initialMarkdown,
     if (!crepe) return;
 
     try {
-      if (typeof crepe.action === 'function') {
-        crepe.action(replaceAll(text));
+      if (typeof (crepe as any).action === 'function') {
+        (crepe as any).action(replaceAll(text));
       } else if (crepe.editor) {
         crepe.editor.action(replaceAll(text));
       }
