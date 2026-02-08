@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import { onAuthStateChanged, signOut, type User } from 'firebase/auth';
 import { auth } from '../firebase';
+import api from '../api/axios';
 
 interface AuthContextType {
     user: User | null;
@@ -20,11 +21,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
                 // Sync with backend on login
                 try {
                     const token = await fbUser.getIdToken();
-                    await fetch('http://localhost:6300/api/users/onboard', {
-                        method: 'POST',
+                    await api.post('/users/onboard', {}, {
                         headers: {
-                            'Authorization': `Bearer ${token}`,
-                            'Content-Type': 'application/json'
+                            'Authorization': `Bearer ${token}`
                         }
                     });
                 } catch (error) {
