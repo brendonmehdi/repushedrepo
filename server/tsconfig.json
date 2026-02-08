@@ -1,0 +1,108 @@
+//{
+//  // Visit https://aka.ms/tsconfig to read more about this file
+//  "compilerOptions": {
+//    // File Layout
+//    // "rootDir": "./src",
+//    // "outDir": "./dist",
+//
+//    // Environment Settings
+//    // See also https://aka.ms/tsconfig/module
+//    "module": "nodenext",
+//    "target": "esnext",
+//    "types": [],
+//    // For nodejs:
+//    // "lib": ["esnext"],
+//    // "types": ["node"],
+//    // and npm install -D @types/node
+//
+//    // Other Outputs
+//    "sourceMap": true,
+//    "declaration": true,
+//    "declarationMap": true,
+//
+//    // Stricter Typechecking Options
+//    "noUncheckedIndexedAccess": true,
+//    "exactOptionalPropertyTypes": true,
+//
+//    // Style Options
+//    // "noImplicitReturns": true,
+//    // "noImplicitOverride": true,
+//    // "noUnusedLocals": true,
+//    // "noUnusedParameters": true,
+//    // "noFallthroughCasesInSwitch": true,
+//    // "noPropertyAccessFromIndexSignature": true,
+//
+//    // Recommended Options
+//    "strict": true,
+//    "jsx": "react-jsx",
+//    "verbatimModuleSyntax": true,
+//    "isolatedModules": true,
+//    "noUncheckedSideEffectImports": true,
+//    "moduleDetection": "force",
+//    "resolveJsonModule": true,
+//    "allowImportingTsExtensions": true,
+//    "allowSyntheticDefaultImports": true,
+//    "emitDeclarationOnly": true
+//  }
+//}
+
+{
+
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+    "module": "ESNext",
+    "target": "ES2023",
+    "types": [],
+    // For nodejs:
+    // "lib": ["esnext"],
+    // "types": ["node"],
+    // and npm install -D @types/node
+    "esModuleInterop": true,
+
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Style Options
+    // "noImplicitReturns": true,
+    // "noImplicitOverride": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "noPropertyAccessFromIndexSignature": true,
+
+    // Recommended Options
+    "strict": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "moduleResolution": "Node",
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
+    "emitDeclarationOnly": true
+  },
+  "exclude": [
+    "prisma.config.ts",
+    "node_modules",
+    "dist",
+    "*/.d.ts"
+  ],
+  "include": [
+    "src/**/*"
+  ]
+}
