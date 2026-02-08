@@ -16,7 +16,7 @@ const app = express();
 const PORT = process.env.PORT || 6300;
 
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", "https://vibescribeai.netlify.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-type", "Authorization"],
     credentials: true
